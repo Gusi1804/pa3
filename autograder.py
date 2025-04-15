@@ -85,8 +85,8 @@ def correctness_checks():
 def perf_checks():
     """Run the performance tests and check runtime bounds."""
     perf_testfiles = {
-        'spgemm': ('perf-testfiles/GL7d14.dat', {16: [20.0, 30.0], 36: [10.0, 20.0]}, [20, 10]),
-        'apsp': ('perf-testfiles/G12.dat', {16: [65.0, 80.0], 36: [30.0, 40.0]}, [15, 10]),
+        'spgemm': ('perf-testfiles/GL7d14.dat', {1: [400.0, 600.0], 4: [100.0, 150.0], 9: [100.0, 150.0], 16: [20.0, 30.0], 25: [20.0, 30.0], 36: [10.0, 20.0]}, [20, 20, 20, 20, 20, 10]),
+        'apsp': ('perf-testfiles/G12.dat', {1: [400.0, 600.0], 4: [400.0, 600.0], 9: [400.0, 600.0], 16: [65.0, 80.0], 25: [65.0, 80.0], 36: [30.0, 40.0]}, [15, 15, 15, 15, 15, 10]),
     }
     check_files([file for file, _, _ in perf_testfiles.values()])
     print('=================== PERFORMANCE TESTS ===================')
