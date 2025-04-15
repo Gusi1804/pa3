@@ -63,12 +63,12 @@ def correctness_checks():
             for testfile in testfiles:
                 print(f'====> {testfile}: ', end='')
                 cp = run_pa3(kind, nranks, testfile)
-                correctness, _ = parse_output(cp.stdout)
+                correctness, current_time = parse_output(cp.stdout)
                 if not correctness:
                     all_correct = False
                     print(f'FAILED')
                 else:
-                    print(f'OK')
+                    print(f'OK - runtime: {current_time}s')
         print()
         print('*************************************')
         if all_correct:
@@ -131,6 +131,9 @@ def perf_checks():
         print('-------------------------------------')
         print()
 
+
+def runtime_tests():
+    
 
 if __name__ == '__main__':
     correctness_checks()
