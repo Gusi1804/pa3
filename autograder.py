@@ -131,10 +131,6 @@ def perf_checks():
         print('-------------------------------------')
         print()
 
-
-def runtime_tests():
-    
-
 if __name__ == '__main__':
     correctness_checks()
     perf_checks()
