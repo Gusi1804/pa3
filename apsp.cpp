@@ -17,9 +17,9 @@ void apsp(int n, std::vector<std::pair<std::pair<int, int>, int>> &graph,
         std::vector<std::pair<std::pair<int,int>, int>> L_tmp = std::move(L);
         spgemm_2d(n,n,n,L_tmp,L_tmp,L,
                   // TODO: Choose operation here
-                  [](int a, int b){ return 0; },
+                  [](int a, int b){ std::min(a,b); },
                   // TODO: Choose operation here
-                  [](int a, int b){ return 0; }, row_comm, col_comm);
+                  [](int a, int b){ return a + b; }, row_comm, col_comm);
         max_iter*=2;
     }
     result = L;
